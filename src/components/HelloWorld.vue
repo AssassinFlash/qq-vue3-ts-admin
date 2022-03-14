@@ -8,6 +8,7 @@ const count = ref(0)
 
 <template>
   <h1>{{ msg }}</h1>
+  <el-button type="primary">新增</el-button>
 
   <p>
     Recommended IDE setup:
