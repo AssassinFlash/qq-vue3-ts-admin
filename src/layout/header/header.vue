@@ -1,7 +1,17 @@
 <template>
-  <div>头部组件</div>
+  <div class="header">
+    <Collapse />
+  </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Collapse from './Collapse.vue'
+</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+</style>

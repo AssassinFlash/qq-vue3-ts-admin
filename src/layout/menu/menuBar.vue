@@ -16,9 +16,11 @@
 import MenuLogo from './menuLogo.vue'
 import MenuItem from './menuItem.vue'
 import { useRoute } from 'vue-router'
-import { ref, reactive, computed } from 'vue'
+import { useStore } from '@/store'
+import { reactive, computed } from 'vue'
 
 const route = useRoute()
+const store = useStore()
 
 // 菜单数据
 const menuList = reactive([
@@ -149,7 +151,7 @@ const menuList = reactive([
 ])
 
 // 菜单栏是否折叠
-const isCollapse = ref(false)
+const isCollapse = computed(() => store.getters.getCollapse)
 
 // 获取激活的菜单项(即当前路由)
 const activeIndex = computed(() => route.path)
