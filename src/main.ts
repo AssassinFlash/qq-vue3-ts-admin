@@ -10,4 +10,9 @@ import 'element-plus/dist/index.css'
 // 导入全局样式
 import './styles/index.scss'
 
-createApp(App).use(router).use(store, key).use(ElementPlus).mount('#app')
+// 导入所有 el-icon
+import installIcons from './icons'
+
+const app = createApp(App)
+installIcons(app)
+app.use(router).use(store, key).use(ElementPlus).mount('#app')
