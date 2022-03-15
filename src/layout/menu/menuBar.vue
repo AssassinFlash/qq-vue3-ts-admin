@@ -2,9 +2,11 @@
   <MenuLogo />
   <el-menu
     class="el-menu-vertical-demo"
+    :default-active="activeIndex"
     :collapse="isCollapse"
     background-color="#304156"
     unique-opened
+    router
   >
     <MenuItem :menu-list="menuList" />
   </el-menu>
@@ -13,7 +15,10 @@
 <script lang="ts" setup>
 import MenuLogo from './menuLogo.vue'
 import MenuItem from './menuItem.vue'
-import { ref, reactive } from 'vue'
+import { useRoute } from 'vue-router'
+import { ref, reactive, computed } from 'vue'
+
+const route = useRoute()
 
 // 菜单数据
 const menuList = reactive([
@@ -145,6 +150,9 @@ const menuList = reactive([
 
 // 菜单栏是否折叠
 const isCollapse = ref(false)
+
+// 获取激活的菜单项(即当前路由)
+const activeIndex = computed(() => route.path)
 </script>
 
 <style scoped>
