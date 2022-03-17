@@ -35,7 +35,6 @@ import MenuBar from './menu/menuBar.vue'
     height: 50px;
     line-height: 50px;
     border-bottom: 1px solid #e5e5e5;
-    background: chocolate;
   }
 
   .main {
