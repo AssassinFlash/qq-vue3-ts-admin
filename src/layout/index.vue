@@ -10,6 +10,7 @@
       </el-header>
 
       <el-main class="main">
+        <Tabs />
         <router-view />
       </el-main>
     </el-container>
@@ -19,6 +20,7 @@
 <script lang="ts" setup>
 import Header from './header/header.vue'
 import MenuBar from './menu/menuBar.vue'
+import Tabs from './tabs/Tabs.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -38,7 +40,7 @@ import MenuBar from './menu/menuBar.vue'
   }
 
   .main {
-    background: darkcyan;
+    padding-top: 0;
   }
 }
 </style>
